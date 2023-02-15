@@ -4,7 +4,7 @@
   "description": "javascript",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel serve ./index.html",
+    "dev": "parcel ./index.html",
     "build": "parcel build ./index.html"
   },
   "repository": {
