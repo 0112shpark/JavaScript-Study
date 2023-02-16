@@ -192,7 +192,35 @@ clearTimeout(time);
 
 ---
 
-#### 📌 `new Date()`: 현재 시간정보 반환.
+#### 📌 `.length`: 배열의 길이 반환.
+
+#### 📌 `.at(n)`: 배열의 n에 있는 item반환. 음수일 경우 뒤에서 부터 count.
+
+#### 📌 `arr1.concat(arr2)`: arr1과 arr2를 합쳐 새로운 배열을 반환.
+
+> `[...arr1, ...arr2]` 과 같은 결과
+
+#### 📌 `.every(function(){})`: 주어진 배열의 값이 function(){}을 만족하는지 확인하고 그에 맞는 Boolean값 반환.
+
+#### 📌 `.filter(function(){})`: function(){}을 만족하는 값만 추출한 새로운 배열 반환.
+
+#### 📌 `.find(function(){})`: function(){}을 만족하는 첫번째 값 반환.
+
+#### 📌 `.find(function(){})`: function(){}을 만족하는 첫번째 값 반환.
+
+#### 📌 `.findIndex(function(){})`: function(){}을 만족하는 첫번째 값의 index 반환.
+
+#### 📌 `.flat(n)`: 주어진 배열안의 하위 배열을 n-depth까지 이어붙여 새로운 배열 반환. 기본값은 1이며 `Infinity`로 모든 하위배열 지정 가능.
+
+> ```javascript
+> const arr = [1, 2, [3, 4, [5, 6]]];
+> arr.flat(2); // 2번째 깊이까지 배열을 이어붙임.
+> //[1,2,3,4,5,6]
+> ```
+
+#### 📌 `.forEach(function(){})`: 주어진 배열의 길이만큼 function(){}을 실행.
+
+#### 📌 `.includes(n)`: 주어진 배열이 n을 가지고 있는지 boolean값 반환.
 
 ## 💡Prototype
 
