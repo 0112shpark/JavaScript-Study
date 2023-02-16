@@ -143,3 +143,29 @@ loadImage(
     // console.log(containerEl);
   }
 );
+
+class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // 하나의 method로 등록
+
+  get getInfo() {
+    return `name: ${this.name} age: ${this.age}`;
+  }
+  set getInfo(value) {
+    const temp = value.split(" ");
+    this.name = temp[0];
+    this.age = Number(temp[1]);
+  }
+}
+
+const student1 = new User("park", 16);
+const student2 = new User("kim", 17);
+console.log(student1.getInfo);
+//값 재할당
+student2.getInfo = "lee 19";
+console.log(typeof student2.age);
+console.log(student2.getInfo);
