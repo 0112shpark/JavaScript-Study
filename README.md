@@ -15,8 +15,8 @@
 
         </details>
 
-3.  [💡JSON](<#JSON-(JavaScript-Object-Notation)>)
-4.  [💡Node.js](#Node.js-bundler-설치)
+3.  [💡JSON](#JSON)
+4.  [💡Node.js](#Node.js-bundler)
 5.  [💡Prototype](#Prototype)
 6.  [💡Class](#Class)
 
@@ -371,7 +371,7 @@ const result = {
 
 </div>
 
-## 💡Node.js bundler 설치
+## 💡Node.js bundler
 
 - `Node.js`는 javascript 런타임 엔진이다.
 
