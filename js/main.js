@@ -116,31 +116,28 @@ console.log(myFunc(4));
 const loadImage = (url, cb) => {
   const imgEl = document.createElement("img");
   imgEl.src = url;
+  // return new Promise((resolve) => {
   imgEl.addEventListener("load", () => {
     setTimeout(() => {
       cb(imgEl);
-    }, 500);
+    }, 2000);
+    setTimeout(() => {
+      temp();
+    }, 2100);
   });
-
-  setTimeout(() => {
-    temp();
-  }, 1000);
-  console.log("hello~");
-  console.log("hello~");
-  console.log("hello~");
 };
 
 const temp = () => {
+  console.log("temp");
   const tempEl = document.querySelector("img");
+
   tempEl.classList.add("show");
 };
 const containerEl = document.querySelector(".container");
 loadImage(
   "https://searchad-phinf.pstatic.net/MjAyMDA2MTBfODcg/MDAxNTkxNzY3Nzg4MjEw.XEj-ruaAUvMGfc7vL9rIokLt4_RBVQZvXMPqc9rn9-Eg.BTh9UKzAqohbT0e_Kd4EDG1RFvmsSNBzuxXIO84Ce58g.JPEG/135695-77b43685-ea3f-48d7-bc0d-c69e5a617d5e.jpg&w=90&h=90&rs=2&qlt=100",
   (imgEl) => {
-    // console.log(containerEl);
     containerEl.append(imgEl);
-    // console.log(containerEl);
   }
 );
 

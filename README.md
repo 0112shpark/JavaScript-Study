@@ -16,8 +16,9 @@
         </details>
 
 3.  [💡JSON](#JSON)
-4.  [💡Prototype](#Prototype)
-5.  [💡Class](#Class)
+4.  [💡Module](#Module)
+5.  [💡Prototype](#Prototype)
+6.  [💡Class](#Class)
 
 ## 💡Function Basics
 
@@ -81,7 +82,7 @@ sum(1, 2);
 
 ### 📌`setTimeout(function(), ms)`
 
-- function()을 ms이후만큼 딜레이 시킨다. ms동안 실행이 멈추는 것이 아니고 단지 `function()`만 멈춰있고 `setTimeout` 뒤의 동작들은 이어서 실행된다.
+- function()을 ms이후만큼 딜레이 시킨다. ms동안 실행이 멈추는 것이 아니고 단지 `function()`만 멈춰있고 `setTimeout` 뒤의 동작들은 이어서 실행된다.-- 비동기(Asynchronous)
 - 예를들어,
 
 ```javascript
@@ -362,7 +363,8 @@ const result = {
 
 > .`json`파일 내에는 한개의 데이터만 넣을 수 있다.
 
-❗ `JSON`포맷에서 `javascript`에서 사용할 수 있는 형식으로 바꾸려면 특정 method를 사용해야 한다. `parcel bundler`를 설치해 자동으로 `.json`파일을 변환시킬 수 있다.
+❗ `JSON`포맷에서 `javascript`에서 사용할 수 있는 형식으로 바꾸려면 특정 method를 사용해야 한다.  
+ `parcel bundler`를 설치해 자동으로 `.json`파일을 변환시킬 수 있다.
 
 <div align = right>
 
@@ -384,6 +386,49 @@ const result = {
    > `-D` option means it will be installed as development purpose.
 4. Add `"dev": "parcel ./index.html",`at `script` object in `package.json`.
 5. Run code with `npm run dev`.
+
+## 💡Module
+
+- Javascript는 `Module`이라는 데이터 파일을 지원한다.
+- `import`로 파일을 가져올 수 있으며 `export`로 값을 내보낼 수 있다.
+
+#### 📌기본 내보내기
+
+- 하나의 데이터만 내보낼 수 있다.
+- `import`할 때, 임의의 변수명을 사용할 수 있다.
+
+- **module.js**
+  ```javascript
+  export default 123;
+  ```
+- **main.js**
+  ```javascript
+  import temp from "./module.js";
+  ```
+
+#### 📌이름 내보내기
+
+- 여러개의 데이터를 내보낼 수 있다.
+- `import`할 때, 변수명은 `export`시의 변수명과 동일해야 한다.
+  > `as`를 사용해 변수명을 변경할 수 있다.
+- `import`시, 중괄호 안에 변수명을 적는다.
+
+- **module.js**
+  ```javascript
+  export const num = 123;
+  export const strr = "hello";
+  export const arr = [];
+  ```
+- **main.js**
+  ```javascript
+  import { num as myNum, strr, arr } from "./module.js";
+  ```
+
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
 
 ## 💡Prototype
 
