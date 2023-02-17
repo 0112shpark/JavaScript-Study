@@ -1,21 +1,21 @@
 ## Table of Contents
 
-1.  [Function Basics](#Function-Basics)
+1.  [💡Function Basics](#Function-Basics)
 
-2.  [Javascript Methods](#Javascript-Methods)
+2.  [💡Javascript Methods](#Javascript-Methods)
     <details>
     <summary>Details</summary>
 
-    - [String](##String)
-    - [Number](##Number)
-    - [Math](##Math)
-    - [Date](#-Date)
-    - [Array](##Array)
+    - [💫String](#-String)
+    - [💫Number](#-Number)
+    - [💫Math](#-Math)
+    - [💫Date](#-Date)
+    - [💫Array](#-Array)
 
         </details>
 
-3.  [Prototype](#Prototype)
-4.  [Class](#Class)
+3.  [💡Prototype](#Prototype)
+4.  [💡Class](#Class)
 
 ## 💡Function Basics
 
