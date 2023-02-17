@@ -6,11 +6,11 @@
     <details>
     <summary>Details</summary>
 
-    - [String](#String)
-    - [Number](#Number)
-    - [Math](#Math)
-    - [Date](#Date)
-    - [Array](#Array)
+    - [String](##String)
+    - [Number](##Number)
+    - [Math](##Math)
+    - [Date](##Date)
+    - [Array](##Array)
 
         </details>
 
