@@ -1,3 +1,9 @@
+## Table of Contents
+
+1. [Function Basics](#Function-Basics)
+
+1. [Javascript Methods](#Javascript-Methods)
+
 ## 💡Function Basics
 
 ### 📌함수 호이스팅(Hoisting)
