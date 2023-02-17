@@ -11,11 +11,14 @@
     - [💫Math](#-Math)
     - [💫Date](#-Date)
     - [💫Array](#-Array)
+    - [💫Object](#-Object)
 
         </details>
 
-3.  [💡Prototype](#Prototype)
-4.  [💡Class](#Class)
+3.  [💡JSON](<#JSON-(JavaScript-Object-Notation)>)
+4.  [💡Node.js](#Node.js-bundler-설치)
+5.  [💡Prototype](#Prototype)
+6.  [💡Class](#Class)
 
 ## 💡Function Basics
 
@@ -273,15 +276,115 @@ clearTimeout(time);
 > //[1,2,3,4,5,6]
 > ```
 
-#### 📌 `.forEach(function(){})`: 주어진 배열의 길이만큼 function(){}을 실행.
+#### 📌 `.forEach(function(){})`: 주어진 배열의 길이만큼 function(){}을 실행. `function(){}`안에서 `return`사용 불가.
 
 #### 📌 `.includes(n)`: 주어진 배열이 n을 가지고 있는지 boolean값 반환.
+
+#### 📌 `.join(str)`: 주어진 배열의 값들을 str로 합쳐 하나의 문자열로 반환.
+
+#### 📌 `.map(function(){})`: 주어진 배열의 길이만큼 function(){}을 실행. `.forEach()`와 다르게 새로운 배열 반환.
+
+#### 📌 `.pop()`: 주어진 배열의 마지막 값을 제거 후 반환.
+
+#### 📌 `.shift()`: 주어진 배열의 첫번째 값 제거 후 반환.
+
+#### 📌 `.push()`: 주어진 배열의 마지막에 값을 대입 후 배열의 최종 길이 반환.
+
+#### 📌 `.unshift()`: 주어진 배열의 처음에 값을 대입 후 배열의 최종 길이 반환.
+
+#### 📌 `.reduce(function(acc, cur){}, initial_val)`: `initial_val`을 `function`의 첫번째 인자(acc), 즉 초기값으로 사용하고 주어진 배열의 첫번째 값을 두번째 인자(cur)로 사용해 `function`을 실행. 반환값은 최종 값 한개만 반환.
+
+#### 📌 `.reverse()`: 주어진 배열을 뒤집고 반환.
+
+#### 📌 `.slice(a,b)`: 주어진 배열의 `index a`부터 `index b`전까지 추출해 새로운 배열 반환.
+
+#### 📌 `.some(function(){})`: 주어진 배열의 값 중, 하나라도 `function()`을 통과하면 `true`반환.
+
+#### 📌 `.sort(function(){})`: `function()`을 수행한 값을 기준으로 오름차순으로 정렬.
+
+#### 📌 `.splice(index, n, val)`: `index`의 위치에 n개만큼 값을 제거 후, `val`추가.
 
 <div align = right>
 
 ### [ **To Top**](#table-of-contents)
 
 </div>
+
+### 💫 Object
+
+---
+
+#### 📌 `object.assign(target, source1, source2)`: `target`객체에 `source` 객체 복사. 같은 값이 존재하면 덮어 씌움. `target`객체 반환.
+
+- 다음코드와 같은 기능을 수행한다.
+
+```javascript
+const result = {
+  ...target,
+  ...source1,
+  ...source2,
+};
+```
+
+#### 📌 `object.entries(object)`: `object` 객체의 key,value 를 하나의 배열로 만들어 값으로 추가한 2차원 배열을 반환.
+
+#### 📌 `object.keys(object)`: `object` 객체의 key을 배열로 만들어 반환.
+
+#### 📌 `object.value(object)`: `object` 객체의 value를 배열로 만들어 반환.
+
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
+
+## 💡JSON (JavaScript Object Notation)
+
+- `JSON`은 데이터 전달을 위한 표준 포맷이다. 문자, 숫자, boolean, NULL, 객체, 배열만 가능하며 문자는 `" "`을 사용해야 한다.
+- `.json`파일을 생성하고 그 파일 안에 원하는 데이터를 넣어 놓을 수 있다.
+
+  - `temp.json`
+
+    ```javascript
+    "Hello world!";
+    ```
+
+  - `main.js`
+
+        ```javascript
+
+        import str from "./temp.json";
+
+        console.log(str);
+
+        ```
+
+    위와 같은 코드로 데이터를 가져올 수 있다.
+
+> .`json`파일 내에는 한개의 데이터만 넣을 수 있다.
+
+❗ `JSON`포맷에서 `javascript`에서 사용할 수 있는 형식으로 바꾸려면 특정 method를 사용해야 한다. `parcel bundler`를 설치해 자동으로 `.json`파일을 변환시킬 수 있다.
+
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
+
+## 💡Node.js bundler 설치
+
+- `Node.js`는 javascript 런타임 엔진이다.
+
+### 🚀 Getting Started
+
+---
+
+1. Download `node.js LTS` at computer or Linux server and check with `node --version` command.
+2. Start the project with `npm init`.
+3. Install `parcel bundler` with `npm install -D parcel`.
+   > `-D` option means it will be installed as development purpose.
+4. Add `"dev": "parcel ./index.html",`at `script` object in `package.json`.
+5. Run code with `npm run dev`.
 
 ## 💡Prototype
 
