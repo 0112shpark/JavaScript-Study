@@ -1,8 +1,21 @@
 ## Table of Contents
 
-1. [Function Basics](#Function-Basics)
+1.  [Function Basics](#Function-Basics)
 
-1. [Javascript Methods](#Javascript-Methods)
+2.  [Javascript Methods](#Javascript-Methods)
+    <details>
+    <summary>Details</summary>
+
+    - [String](#💫-string)
+    - [Number](#💫-number)
+    - [Math](#💫-Math)
+    - [Date](#💫-Date)
+    - [Array](#💫-Array)
+
+        </details>
+
+3.  [Prototype](#💡prototype)
+4.  [Class](#💡class)
 
 ## 💡Function Basics
 
@@ -56,6 +69,12 @@ sum(1, 2);
 
 형식이 된다.
 
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
+
 ## 💡Javascript Methods
 
 ### 📌`setTimeout(function(), ms)`
@@ -89,6 +108,12 @@ clearTimeout(time);
 
 > 위 코드 실행시 `hello`는 출력되지 않는다.
 
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
+
 ### 💫 String
 
 ---
@@ -113,6 +138,12 @@ clearTimeout(time);
 
 #### 📌`.trim()`: 대상 문자열의 앞뒤의 tab이나 space를 제거한 후 반환.
 
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
+
 ### 💫 Number
 
 ---
@@ -132,6 +163,12 @@ clearTimeout(time);
 > `num`은 문자열도 가능
 
 #### 📌 `Number.parseFloat(num)`: num을 float로 변환.
+
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
 
 ### 💫 Math
 
@@ -159,6 +196,12 @@ clearTimeout(time);
   > ```
 
 #### 📌 `Math.round(n)`: n을 반올림해 정수 반환.
+
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
 
 ### 💫 Date
 
@@ -194,6 +237,12 @@ clearTimeout(time);
 
 > 0: 일요일, 6: 토요일
 
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
+
 ### 💫 Array
 
 ---
@@ -227,6 +276,12 @@ clearTimeout(time);
 #### 📌 `.forEach(function(){})`: 주어진 배열의 길이만큼 function(){}을 실행.
 
 #### 📌 `.includes(n)`: 주어진 배열이 n을 가지고 있는지 boolean값 반환.
+
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
 
 ## 💡Prototype
 
@@ -325,6 +380,12 @@ console.log(student1.getInfo());
 console.log(student2.getInfo());
 ```
 
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
+
 ## 💡Class
 
 ### 📌 `Getter`, `Setter`
@@ -389,3 +450,9 @@ const student2 = new User("kim", 17);
 console.log(User.isStu(student1));
 console.log(student2.isStu()); // Error
 ```
+
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
