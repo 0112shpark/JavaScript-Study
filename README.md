@@ -6,16 +6,16 @@
     <details>
     <summary>Details</summary>
 
-    - [String](#💫-string)
-    - [Number](#💫-number)
-    - [Math](#💫-Math)
-    - [Date](#💫-Date)
-    - [Array](#💫-Array)
+    - [String](#String)
+    - [Number](#Number)
+    - [Math](#Math)
+    - [Date](#Date)
+    - [Array](#Array)
 
         </details>
 
-3.  [Prototype](#💡prototype)
-4.  [Class](#💡class)
+3.  [Prototype](#Prototype)
+4.  [Class](#Class)
 
 ## 💡Function Basics
 
