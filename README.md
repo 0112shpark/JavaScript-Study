@@ -9,7 +9,7 @@
     - [String](##String)
     - [Number](##Number)
     - [Math](##Math)
-    - [Date](##Date)
+    - [Date](#-Date)
     - [Array](##Array)
 
         </details>
