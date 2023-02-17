@@ -15,10 +15,9 @@
 
         </details>
 
-3.  [💡JSON](<#-JSON-(JavaScript-Object-Notation)>)
-4.  [💡Node.js](#-Node.js-bundler-설치)
-5.  [💡Prototype](#Prototype)
-6.  [💡Class](#Class)
+3.  [💡JSON](#JSON)
+4.  [💡Prototype](#Prototype)
+5.  [💡Class](#Class)
 
 ## 💡Function Basics
 
@@ -338,9 +337,9 @@ const result = {
 
 </div>
 
-## 💡JSON (JavaScript Object Notation)
+## 💡JSON
 
-- `JSON`은 데이터 전달을 위한 표준 포맷이다. 문자, 숫자, boolean, NULL, 객체, 배열만 가능하며 문자는 `" "`을 사용해야 한다.
+- `JSON`은 JavaScript Object Notation의 약어로써 데이터 전달을 위한 표준 포맷이다. 문자, 숫자, boolean, NULL, 객체, 배열만 가능하며 문자는 `" "`을 사용해야 한다.
 - `.json`파일을 생성하고 그 파일 안에 원하는 데이터를 넣어 놓을 수 있다.
 
   - `temp.json`
