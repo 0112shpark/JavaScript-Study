@@ -17,8 +17,9 @@
 
 3.  [💡JSON](#JSON)
 4.  [💡Module](#Module)
-5.  [💡Prototype](#Prototype)
-6.  [💡Class](#Class)
+5.  [💡CallBack](#CallBack)
+6.  [💡Prototype](#Prototype)
+7.  [💡Class](#Class)
 
 ## 💡Function Basics
 
@@ -424,6 +425,149 @@ const result = {
   import { num as myNum, strr, arr } from "./module.js";
   ```
 
+<div align = right>
+
+### [ **To Top**](#table-of-contents)
+
+</div>
+
+## 💡CallBack
+
+- Javascript에는 `asynchronous`(비동기), `synchronous`(동기)의 두가지 함수가 존재한다. 기본적으로 동기함수는 함수가 쓰여져 있는 순서대로 실행이 되는 반면, 비동기함수는 순서에 제약을 받지 않는다. `setTimeout()`함수가 대표적인 비동기 함수이다.
+- 이런 비동기 함수에 순서를 부여하고 싶으면 `Promise`생성자를 사용할 수 있다.
+
+#### 📌 `new Promise(resolve)`
+
+- 아래 코드는 실행된 후 1초후에 `Hello`를, 그리고 1초 후 `World`를 출력하는 예시이다.
+
+```javascript
+const hello = (callback) => {
+  setTimeout(() => {
+    console.log("Hello");
+    callback();
+  }, 1000);
+};
+
+const world = () => {
+  setTimeout(() => {
+    console.log("World");
+  }, 1000);
+};
+
+hello(() => {
+  world();
+});
+```
+
+⚠️ 위와 같이 코드를 작성하게 되면 callback함수의 개수가 많아지면 콜백지옥에 빠지게 된다. 이를 해결하기 위해 `promise`를 사용한다.
+
+- 다음과 같이 함수내에서 `promise` 인스턴스를 반환한다.
+
+```javascript
+const hello = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Hello");
+      resolve();
+    }, 1000);
+  });
+};
+
+const world = () => {
+  setTimeout(() => {
+    console.log("World");
+  }, 1000);
+};
+
+hello().then(world);
+```
+
+- 함수의 매개변수로 받는 `resolve`는 동기적으로 실행할 함수이다. 동기적으로 실행할 함수, 즉 순서에 따라 진행되어야 함수는 `then` 메서드의 인자로 넣어준다. 위의 예시에서, `world`함수가 `resolve`가 되어 hello가 출력된 후 실행된다.
+- 함수를 반복적으로 호출하는 것을 방지하기 위해 `then`을 사용하여 더욱 간단하게 작성할 수 있다.
+
+🔆 **다른 방법으로 `async`와 `await`를 사용할 수 있다.**
+
+- 동기적으로 기다려야 할 함수에 `await`키워드를 붙여준다. 그 후, 다음에 호출할 함수를 작성한다.
+- 이렇게 만들어진 하나의 flow는 `async`가 붙은 함수로 감싸야 한다.
+
+```javascript
+const hello = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Hello");
+      resolve();
+    }, 1000);
+  });
+};
+
+const world = () => {
+  setTimeout(() => {
+    console.log("World");
+  }, 1000);
+};
+
+const ab = async () => {
+  await hello();
+  world();
+};
+ab();
+```
+
+- `resolve`함수가 실행되야 다음 함수, 즉 `world`함수가 실행된다. 여기서 `resolve`는 형태만 존재하는 함수이다.
+
+#### 📌 `new Promise(resolve, reject)`
+
+- reject 매개변수를 하나 더 추가해 에러구문을 만들 수 있다.
+
+- 다음예시는 인자로 받는 문자열이 `Hello`가 아닐시 에러를 출력하는 코드이다.
+
+```javascript
+const hello = (str) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (str !== "Hello") {
+        reject(`${str}은 "Hello"가 아닙니다.`);
+        return;
+      }
+      console.log(str);
+      resolve();
+    }, 1000);
+  });
+};
+
+const world = () => {
+  setTimeout(() => {
+    console.log("World");
+  }, 1000);
+};
+
+hello("Hello")
+  .then(world)
+  .catch((err) => console.error(err))
+  .finally(() => console.log("done!"));
+// Hello World done!
+
+// async- await 사용해서 출력하기!
+const ab = async () => {
+  try {
+    await hello("Helo");
+    world();
+  } catch (err) {
+    console.error(err);
+  } finally {
+    console.log("done!");
+  }
+};
+ab();
+// Helo은 "Hello"가 아닙니다.
+```
+
+- 이전 예시와 똑같이 1초후에 `Hello`를, 1초후에 `World`를 출력하는 예시이다. 하지만 이번엔 인자로 문자열을 받아 비교하는 조건문이 추가되었다.
+- `catch`구문안에 `reject`인자로 들어갈 에러 함수를 작성한다.
+- `finally`는 함수 실행이 종료될때 실행될 함수를 작성한다.
+- `hello`함수에서 인자로 들어온 str문자열을 검사한다. 만약 조건을 통과하지 못했다면, `reject`인자로 들어온 `catch`안의 함수가 실행되고 `return`에 의해 함수는 종료된다.
+- 조건을 통과했다면, `then`안의 함수가 실행되게된다.
+- `resolve`와 `reject`는 같이 실행 될 수 없다. 하나가 실행되면 다른 하나는 실행되지 않는다. 반면, `finally`는 항상 실행된다.
 <div align = right>
 
 ### [ **To Top**](#table-of-contents)

@@ -116,31 +116,38 @@ console.log(myFunc(4));
 const loadImage = (url, cb) => {
   const imgEl = document.createElement("img");
   imgEl.src = url;
-  // return new Promise((resolve) => {
-  imgEl.addEventListener("load", () => {
-    setTimeout(() => {
-      cb(imgEl);
-    }, 2000);
-    setTimeout(() => {
-      temp();
-    }, 2100);
+  return new Promise((resolve) => {
+    cb(imgEl);
+    imgEl.addEventListener("load", () => {
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+    });
   });
 };
 
 const temp = () => {
-  console.log("temp");
   const tempEl = document.querySelector("img");
 
   tempEl.classList.add("show");
 };
 const containerEl = document.querySelector(".container");
-loadImage(
-  "https://searchad-phinf.pstatic.net/MjAyMDA2MTBfODcg/MDAxNTkxNzY3Nzg4MjEw.XEj-ruaAUvMGfc7vL9rIokLt4_RBVQZvXMPqc9rn9-Eg.BTh9UKzAqohbT0e_Kd4EDG1RFvmsSNBzuxXIO84Ce58g.JPEG/135695-77b43685-ea3f-48d7-bc0d-c69e5a617d5e.jpg&w=90&h=90&rs=2&qlt=100",
-  (imgEl) => {
-    containerEl.append(imgEl);
-  }
-);
-
+// loadImage(
+//   "https://searchad-phinf.pstatic.net/MjAyMDA2MTBfODcg/MDAxNTkxNzY3Nzg4MjEw.XEj-ruaAUvMGfc7vL9rIokLt4_RBVQZvXMPqc9rn9-Eg.BTh9UKzAqohbT0e_Kd4EDG1RFvmsSNBzuxXIO84Ce58g.JPEG/135695-77b43685-ea3f-48d7-bc0d-c69e5a617d5e.jpg&w=90&h=90&rs=2&qlt=100",
+//   (imgEl) => {
+//     containerEl.append(imgEl);
+//   }
+// );
+const aa = async () => {
+  await loadImage(
+    "https://searchad-phinf.pstatic.net/MjAyMDA2MTBfODcg/MDAxNTkxNzY3Nzg4MjEw.XEj-ruaAUvMGfc7vL9rIokLt4_RBVQZvXMPqc9rn9-Eg.BTh9UKzAqohbT0e_Kd4EDG1RFvmsSNBzuxXIO84Ce58g.JPEG/135695-77b43685-ea3f-48d7-bc0d-c69e5a617d5e.jpg&w=90&h=90&rs=2&qlt=100",
+    (imgEl) => {
+      containerEl.append(imgEl);
+    }
+  );
+  temp();
+};
+aa();
 class User {
   constructor(name, age) {
     this.name = name;
@@ -166,3 +173,46 @@ console.log(student1.getInfo);
 student2.getInfo = "lee 19";
 console.log(typeof student2.age);
 console.log(student2.getInfo);
+
+const aa1 = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("hello");
+      resolve();
+    }, 2000);
+    console.log("hello2");
+  });
+};
+
+aa1().then(() => {
+  console.log("world");
+});
+
+// const hello = (str) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (str !== "Hello") {
+//         reject(`${str}은 "Hello"가 아닙니다.`);
+//         return;
+//       }
+//       console.log(str);
+//       resolve();
+//     }, 1000);
+//   });
+// };
+
+// const world = () => {
+//   setTimeout(() => {
+//     console.log("World");
+//   }, 1000);
+// };
+
+// const ab = async () => {
+//   try {
+//     await hello("Helo");
+//     world();
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
+// ab();
