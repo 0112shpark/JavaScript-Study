@@ -20,6 +20,7 @@
 5.  [💡CallBack](#CallBack)
 6.  [💡Prototype](#Prototype)
 7.  [💡Class](#Class)
+8.  [💡Mutability](#Mutability)
 
 ## 💡Function Basics
 
@@ -812,7 +813,7 @@ b.x.y = 2;
 - ```javascript
   import cloneDeep from "lodash.cloneDeep";
   ```
-  를 추가해 사용한다.
+  를 `js`파일에 추가해 사용한다.
 - 사용법은 `cloneDeep(a)`로 복사할 객체를 인자로 줄 수 있다.
 
 🔆 **Array**
@@ -826,4 +827,3 @@ b.x.y = 2;
 ### [ **To Top**](#table-of-contents)
 
 </div>
-```
