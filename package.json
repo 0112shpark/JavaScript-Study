@@ -76,6 +76,7 @@
     "lightningcss-win32-x64-msvc": "^1.19.0",
     "lines-and-columns": "^1.2.4",
     "lmdb": "^2.5.2",
+    "lodash": "^4.17.21",
     "mdn-data": "^2.0.14",
     "micromatch": "^4.0.5",
     "msgpackr": "^1.8.3",
